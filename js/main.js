@@ -1,4 +1,4 @@
 import {createWizards} from './data.js';
-import './popup.js';
+import './user-modal.js';
 
 console.log(createWizards());
