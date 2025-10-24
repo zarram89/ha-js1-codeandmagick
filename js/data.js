@@ -1,3 +1,5 @@
+import {getRandomArrayElement} from './utils.js';
+
 const NAMES = [
   'Иван',
   'Хуан Себастьян',
@@ -35,15 +37,6 @@ const EYES_COLORS = [
 ];
 const SIMILAR_WIZARD_COUNT = 4;
 
-const getRandomInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(a, b));
-  const upper = Math.floor(Math.max(a, b));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-};
-
-const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
-
 const createWizard = () => {
   return {
     name: getRandomArrayElement(NAMES) + ' ' + getRandomArrayElement(SURNAMES),
@@ -52,6 +45,6 @@ const createWizard = () => {
   };
 };
 
-const similarWizards = Array.from({ length: SIMILAR_WIZARD_COUNT }, createWizard);
+const createWizards = () => Array.from({length: SIMILAR_WIZARD_COUNT}, createWizard);
 
-console.log(similarWizards);
+export {createWizards};
